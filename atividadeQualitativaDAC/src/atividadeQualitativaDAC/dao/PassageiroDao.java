@@ -9,7 +9,7 @@ import atividadeQualitativaDAC.conexao.Conexao;
 import atividadeQualitativaDAC.entidates.Passageiro;
 
 public class PassageiroDao {
-    
+
     private Connection connection;
     
     public PassageiroDao() {
@@ -18,6 +18,10 @@ public class PassageiroDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    public void getErrorMessage(String method, String err) {
+    	return "Erro ao " + method + " o Passageiro: " + err;
     }
     
     public void inserePassageiro(Passageiro passageiro) {
@@ -63,7 +67,7 @@ public class PassageiroDao {
             }
             return passageiro;
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao atualizar o passageiro: " + e.getMessage());
+            throw new RuntimeException(getErrorMessage("atualizar" , e.getMessage()));
         }
     }
     
@@ -73,7 +77,7 @@ public class PassageiroDao {
             stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao remover o passageiro: " + e.getMessage());
+            throw new RuntimeException(getErrorMessage("remover" , e.getMessage()));
         }
     }
 }

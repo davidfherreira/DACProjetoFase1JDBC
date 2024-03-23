@@ -8,9 +8,8 @@ import atividadeQualitativaDAC.entidates.Itinerario;
 import atividadeQualitativaDAC.entidates.Passageiro;
 
 public class Main {
-
     public static void main(String[] args) {
-        // Teste CRUD para Aviao
+    	// Teste CRUD para Aviao
         AviaoDao aviaoDao = new AviaoDao();
         
         // Inserir Aviao
@@ -32,11 +31,10 @@ public class Main {
         aviaoEncontrado = aviaoDao.byId(1);
         System.out.println("Avião Atualizado: " + aviaoEncontrado.getModelo());
         
-        
         // Remover Aviao
         //aviaoDao.removerAviao(1);
         
-     // Teste CRUD para Itinerario
+        // Teste CRUD para Itinerario
         ItinerarioDao itinerarioDao = new ItinerarioDao();
         
         // Inserir Itinerario
@@ -61,7 +59,6 @@ public class Main {
         // Verificando se o Itinerario foi atualizado
         itinerarioEncontrado = itinerarioDao.byId(1);
         System.out.println("Itinerário Atualizado: " + itinerarioEncontrado.getOrigem() + " para " + itinerarioEncontrado.getDestino());
-        
         
         // Remover Itinerario
         //itinerarioDao.removerItinerario(1);
@@ -90,8 +87,7 @@ public class Main {
         System.out.println("Passageiro Atualizado: " + passageiroEncontrado.getNome());
         
         ///Limpando Banco
-     // Remover Passageiro, Aviao e Itinerario
-        
+        // Remover Passageiro, Aviao e Itinerario
         PassageiroDao passageiroD = new PassageiroDao();
         ItinerarioDao itinerarioD = new ItinerarioDao();
         AviaoDao aviaoD = new AviaoDao();
@@ -99,9 +95,6 @@ public class Main {
         passageiroD.removerPassageiro(1);
         itinerarioD.removerItinerario(1);
         aviaoD.removerAviao(1);
-
     }
-    
-    
 }
 
