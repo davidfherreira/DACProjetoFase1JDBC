@@ -12,6 +12,5 @@ public class Conexao {
 
     public Connection obterConexao() throws SQLException {
         return DriverManager.getConnection(URL, USUARIO, SENHA);
-        
     }
 }

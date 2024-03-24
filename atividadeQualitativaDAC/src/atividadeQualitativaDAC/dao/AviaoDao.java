@@ -45,7 +45,7 @@ public class AviaoDao {
 			Aviao aviao = new Aviao();
 			while (rs.next()) {
 				aviao.setId(rs.getInt("id"));
-                aviao.setModelo(rs.getString("modelo"));
+				aviao.setModelo(rs.getString("modelo"));
 			}
 			return aviao;
 		} catch (SQLException e) {
@@ -79,10 +79,4 @@ public class AviaoDao {
 	        throw new RuntimeException("Erro ao remover o avião: " + e.getMessage());
 	    }
 	}
-
-	
-	
-	
-	
-	
 }
